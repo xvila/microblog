@@ -1,0 +1,9 @@
+<!-- This line renders the base file first -->
+{% extends "base.html" %}
+<!-- This like renders the below content into the block content in the base file. This is great because you can have a master file that renders something that should be on every page and change the contents of the individual pages with the block content. -->
+{% block content %}
+    <h1>Hi, {{user.username}}!</h1>
+    {% for post in posts %}
+    <div><p>{{post.author.username}} says: <b>{{post.body}}</b></p></div>
+    {% endfor %}
+{% endblock %}
